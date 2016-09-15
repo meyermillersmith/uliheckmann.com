@@ -1,0 +1,491 @@
+<Data xmlns:mysql="http://lesspain.de/mysql" dialect="de.lesspain.mysql">
+ <Schema name="uliheckmann">
+  <Table name="portfolios">
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">123</Col>
+    <Col name="position">0</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">124</Col>
+    <Col name="position">2</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">127</Col>
+    <Col name="position">1</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">126</Col>
+    <Col name="position">3</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">31</Col>
+    <Col name="position">4</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">125</Col>
+    <Col name="position">5</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">33</Col>
+    <Col name="position">6</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">34</Col>
+    <Col name="position">7</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">35</Col>
+    <Col name="position">8</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">36</Col>
+    <Col name="position">9</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">37</Col>
+    <Col name="position">10</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">118</Col>
+    <Col name="position">11</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">99</Col>
+    <Col name="position">12</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">119</Col>
+    <Col name="position">13</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">117</Col>
+    <Col name="position">14</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">103</Col>
+    <Col name="position">15</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">43</Col>
+    <Col name="position">16</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">116</Col>
+    <Col name="position">17</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">45</Col>
+    <Col name="position">18</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">46</Col>
+    <Col name="position">19</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">120</Col>
+    <Col name="position">20</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">48</Col>
+    <Col name="position">21</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">112</Col>
+    <Col name="position">22</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">110</Col>
+    <Col name="position">23</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">51</Col>
+    <Col name="position">24</Col>
+   </Row>
+   <Row>
+    <Col name="id">1</Col>
+    <Col name="mediafile_id">111</Col>
+    <Col name="position">25</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">2</Col>
+    <Col name="position">1</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">3</Col>
+    <Col name="position">2</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">5</Col>
+    <Col name="position">4</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">9</Col>
+    <Col name="position">8</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">10</Col>
+    <Col name="position">9</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">11</Col>
+    <Col name="position">10</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">12</Col>
+    <Col name="position">11</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">13</Col>
+    <Col name="position">12</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">14</Col>
+    <Col name="position">13</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">15</Col>
+    <Col name="position">14</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">16</Col>
+    <Col name="position">15</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">17</Col>
+    <Col name="position">16</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">18</Col>
+    <Col name="position">17</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">19</Col>
+    <Col name="position">18</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">20</Col>
+    <Col name="position">19</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">21</Col>
+    <Col name="position">20</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">22</Col>
+    <Col name="position">21</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">23</Col>
+    <Col name="position">22</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">24</Col>
+    <Col name="position">23</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">25</Col>
+    <Col name="position">24</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">26</Col>
+    <Col name="position">25</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">105</Col>
+    <Col name="position">3</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">108</Col>
+    <Col name="position">0</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">109</Col>
+    <Col name="position">7</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">121</Col>
+    <Col name="position">6</Col>
+   </Row>
+   <Row>
+    <Col name="id">2</Col>
+    <Col name="mediafile_id">122</Col>
+    <Col name="position">5</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">53</Col>
+    <Col name="position">0</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">54</Col>
+    <Col name="position">1</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">55</Col>
+    <Col name="position">2</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">56</Col>
+    <Col name="position">3</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">57</Col>
+    <Col name="position">4</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">58</Col>
+    <Col name="position">5</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">59</Col>
+    <Col name="position">6</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">60</Col>
+    <Col name="position">7</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">61</Col>
+    <Col name="position">8</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">62</Col>
+    <Col name="position">9</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">63</Col>
+    <Col name="position">10</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">64</Col>
+    <Col name="position">11</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">65</Col>
+    <Col name="position">12</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">66</Col>
+    <Col name="position">13</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">67</Col>
+    <Col name="position">14</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">68</Col>
+    <Col name="position">15</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">70</Col>
+    <Col name="position">16</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">72</Col>
+    <Col name="position">17</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">73</Col>
+    <Col name="position">18</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">74</Col>
+    <Col name="position">19</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">75</Col>
+    <Col name="position">20</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">76</Col>
+    <Col name="position">21</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">77</Col>
+    <Col name="position">22</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">78</Col>
+    <Col name="position">23</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">113</Col>
+    <Col name="position">24</Col>
+   </Row>
+   <Row>
+    <Col name="id">3</Col>
+    <Col name="mediafile_id">114</Col>
+    <Col name="position">25</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">79</Col>
+    <Col name="position">1</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">80</Col>
+    <Col name="position">2</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">81</Col>
+    <Col name="position">3</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">82</Col>
+    <Col name="position">4</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">83</Col>
+    <Col name="position">5</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">84</Col>
+    <Col name="position">6</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">85</Col>
+    <Col name="position">7</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">86</Col>
+    <Col name="position">8</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">106</Col>
+    <Col name="position">9</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">88</Col>
+    <Col name="position">10</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">107</Col>
+    <Col name="position">11</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">90</Col>
+    <Col name="position">12</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">91</Col>
+    <Col name="position">13</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">92</Col>
+    <Col name="position">14</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">93</Col>
+    <Col name="position">15</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">94</Col>
+    <Col name="position">16</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">95</Col>
+    <Col name="position">17</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">96</Col>
+    <Col name="position">18</Col>
+   </Row>
+   <Row>
+    <Col name="id">4</Col>
+    <Col name="mediafile_id">97</Col>
+    <Col name="position">19</Col>
+   </Row>
+  </Table>
+ </Schema>
+</Data>

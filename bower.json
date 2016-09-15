@@ -1,0 +1,22 @@
+{
+  "name": "uliheckmann.com",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Che' Nxusani <che.nxusani@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "jquery": "^3.1.0",
+    "Sortable": "sortable.js#^1.4.2"
+  }
+}

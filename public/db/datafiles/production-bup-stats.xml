@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataStatistics>
+  <SchemaStatistics schemaName="uliheckmann">
+    <TableStatistics tableName="file_types" numRecords="3" />
+    <TableStatistics tableName="files" numRecords="194" />
+    <TableStatistics tableName="mediafiles" numRecords="97" />
+    <TableStatistics tableName="portfolio_names" numRecords="4" />
+    <TableStatistics tableName="portfolios" numRecords="63" />
+  </SchemaStatistics>
+</DataStatistics>
+

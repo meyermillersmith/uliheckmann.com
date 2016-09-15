@@ -1,0 +1,185 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+    <display-name>Ulli Heckman</display-name>
+    
+  	<context-param>
+		<param-name>docroot</param-name>
+		<param-value></param-value>
+	</context-param>
+	 <context-param>
+		<param-name>approot</param-name>
+		<param-value></param-value>
+	</context-param>
+    <context-param>
+		<param-name>tempdirectory</param-name>
+		<param-value>/heckmann/</param-value>
+	</context-param>
+    <context-param>
+		<param-name>maxfilesize</param-name>
+		<param-value>600000</param-value>
+	</context-param>
+    <context-param>
+		<param-name>imagedirectory</param-name>
+		<param-value>media</param-value>
+	</context-param>
+    <context-param>
+		<param-name>adminuser</param-name>
+		<param-value>uliheckmann</param-value>
+	</context-param>
+	<context-param>
+		<param-name>adminpass</param-name>
+		<param-value>raaHu3oh</param-value>
+	</context-param>
+	
+    <servlet>
+		<servlet-name>
+			initialiser
+		</servlet-name>
+		<display-name>initialiser</display-name>
+        <description>Initialises dataBase pool, the RootPath String</description>
+		<servlet-class>
+			com.lessrain.controller.Initialiser
+		</servlet-class>
+        <init-param>
+            <param-name>db_url</param-name>
+            <param-value>jdbc:mysql:///uliheckmann</param-value>
+        </init-param>
+        <init-param>
+            <param-name>db_user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>db_pass</param-name>
+            <param-value>porpoise</param-value>
+        </init-param>
+        <init-param>
+            <param-name>live_db_url</param-name>
+            <param-value>jdbc:mysql://localhost:3306/uliheckmann</param-value>
+        </init-param>
+         <init-param>
+            <param-name>live_db_user</param-name>
+            <param-value>uliheckmann</param-value>
+        </init-param>
+        <init-param>
+            <param-name>live_db_pass</param-name>
+            <param-value>eiM3chei</param-value>
+        </init-param>
+        <init-param>
+            <param-name>thomas_db_url</param-name>
+            <param-value>jdbc:mysql://localhost:3308/uliheckmann</param-value>
+        </init-param>
+         <init-param>
+            <param-name>thomas_db_user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>thomas_db_pass</param-name>
+            <param-value>thomas</param-value>
+        </init-param>
+		<load-on-startup>5</load-on-startup>
+	</servlet>
+    
+	<servlet>
+		<servlet-name>
+			datacontroller
+		</servlet-name>
+		<display-name>DataController</display-name>
+        <description>Handles Request for data</description>
+		<servlet-class>
+			com.lessrain.controller.DataController
+		</servlet-class>
+
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+    
+    <servlet>
+		<servlet-name>
+			admincontroller
+		</servlet-name>
+		<display-name>AdminController</display-name>
+        <description>Handles Requests within the Admin Area</description>
+		<servlet-class>
+			com.lessrain.controller.AdminController
+		</servlet-class>
+
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+    
+    <servlet>
+		<servlet-name>
+			uploadcontroller
+		</servlet-name>
+		<display-name>UploadController</display-name>
+        <description>Manages file uploads</description>
+		<servlet-class>
+			com.lessrain.controller.FileUploadController
+		</servlet-class>
+
+		<load-on-startup>10</load-on-startup>
+	</servlet>
+
+	 
+	 <servlet-mapping>
+		<servlet-name>
+			datacontroller
+		</servlet-name>
+		<url-pattern>
+			/dynamicdata/*
+		</url-pattern>
+	 </servlet-mapping>
+    
+    <servlet-mapping>
+		<servlet-name>
+			admincontroller
+		</servlet-name>
+		<url-pattern>
+			/admin/*
+		</url-pattern>
+	 </servlet-mapping>
+    
+    <servlet-mapping>
+		<servlet-name>
+			uploadcontroller
+		</servlet-name>
+		<url-pattern>
+			/upload/*
+		</url-pattern>
+	 </servlet-mapping>
+    
+     <servlet-mapping>
+		<servlet-name>
+			initialiser
+		</servlet-name>
+		<url-pattern>
+			/init.jsp
+		</url-pattern>
+	 </servlet-mapping>
+    
+    <taglib>
+       <taglib-uri>http://www.lessrain.com/projects/tags/xmlgen.jar</taglib-uri>
+       <taglib-location>/WEB-INF/xmlgen.tld</taglib-location>
+    </taglib>
+    <taglib>
+       <taglib-uri>http://www.lessrain.com/projects/tags/admin.jar</taglib-uri>
+       <taglib-location>/WEB-INF/admin.tld</taglib-location>
+    </taglib>
+	 
+	<session-config>
+		<session-timeout>300</session-timeout>
+	</session-config>
+	
+    <welcome-file-list>
+    	<welcome-file>index.jsp</welcome-file>
+    	<welcome-file>index.html</welcome-file>
+  	</welcome-file-list>
+  	
+    <error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+    
+</web-app>
+

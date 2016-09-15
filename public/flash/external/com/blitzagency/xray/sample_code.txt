@@ -1,0 +1,8 @@
+private static function xray() :Void
+	{
+		var listener:Object = {};
+		listener.LoadComplete = function() {};
+		
+		XrayLoader.addEventListener("LoadComplete", listener);
+		XrayLoader.loadConnector("com/blitzagency/xray/xrayConnector_1.6.1.swf", _root);
+	}

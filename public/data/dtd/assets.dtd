@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Assets (Labels?,Links?,Sources?,Fonts?,StyleSheets?,Images?)>
+<!ATTLIST Assets
+	mainSWFSrc CDATA #IMPLIED
+>
+
+	<!ELEMENT Labels (Label+)>
+		<!ELEMENT Label (#PCDATA)>
+		<!ATTLIST Label
+			id CDATA #REQUIRED
+		>
+
+	<!ELEMENT Links (Link+)>
+		<!ELEMENT Link (#PCDATA)>
+		<!ATTLIST Link
+			id CDATA #REQUIRED
+			href CDATA #REQUIRED
+			target CDATA "_self"
+		>
+
+	<!ELEMENT Sources (Source+)>
+		<!ELEMENT Source EMPTY>
+		<!ATTLIST Source
+			id CDATA #REQUIRED
+			src CDATA #REQUIRED
+		>
+
+	<!ELEMENT Fonts (Font+)>
+		<!ELEMENT Font EMPTY>
+		<!ATTLIST Font
+			id CDATA #REQUIRED
+			fontSrc CDATA #REQUIRED
+			importSrc CDATA #REQUIRED
+		>
+
+	<!ELEMENT StyleSheets (StyleSheet+)>
+		<!ELEMENT StyleSheet EMPTY>
+		<!ATTLIST StyleSheet
+			id CDATA #REQUIRED
+			src CDATA #REQUIRED
+		>
+
+	<!ELEMENT Images (Image+)>
+		<!ELEMENT Image EMPTY>
+		<!ATTLIST Image
+			id CDATA #REQUIRED
+			src CDATA #REQUIRED
+		>
+		

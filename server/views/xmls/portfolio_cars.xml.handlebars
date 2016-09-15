@@ -1,0 +1,15 @@
+
+  <?xml version="1.0" encoding="ISO-8859-1"?>
+  <!DOCTYPE Gallery SYSTEM "../dtd/gallery.dtd">
+  <Gallery>
+  	<Title>cars</Title>
+
+    {{#each images}}
+      <MediaFile id="{{_id}}">
+          <File mediaType="jpg" src="{{path}}" width="990" height="600" align="left" enableFill="true"/>
+          <PreviewFile mediaType="jpg" src="{{path}}" width="88" height="100"/>
+          <Caption/>
+      </MediaFile>
+    {{/each}}
+
+  </Gallery>

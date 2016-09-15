@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Navigation SYSTEM "../dtd/navigation.dtd">
+
+<Navigation>
+	<Main menuImageSrc="../../media/menu_fill_main_16.jpg">
+		<Item x="124">
+			<Title>Uli Heckmann</Title>
+		</Item>
+		<Item x="0">
+			<Title>Portfolio</Title>
+			<Item pageID="/Gallery/Portfolio/Cars" menuImageSrc="../../media/menu_fill_portfolio_cars.jpg" x="0">
+				<Title>Cars</Title>
+			</Item>
+			<Item pageID="/Gallery/Portfolio/People" menuImageSrc="../../media/menu_fill_portfolio_people.jpg" x="296">
+				<Title>People</Title>
+			</Item>
+			<!-- <Item pageID="/Gallery/Portfolio/Moods" menuImageSrc="../../media/menu_fill_portfolio_moods.jpg" x="693">
+				<Title>Moods</Title>
+			</Item> -->
+		</Item>
+		<Item x="52">
+			<Title>Archive</Title>
+			<Item pageID="/Gallery/Archive/Cars" menuImageSrc="../../media/menu_fill_archive_cars.jpg" x="52">
+				<Title>Cars</Title>
+			</Item>
+			<Item pageID="/Gallery/Archive/People" menuImageSrc="../../media/menu_fill_archive_people.jpg" x="372">
+				<Title>People</Title>
+			</Item>
+		</Item>
+		<Item pageID="/Clients" menuImageSrc="../../media/menu_fill_clients.jpg" x="310">
+			<Title>Clients</Title>
+		</Item>
+		<Item pageID="/Contact" menuImageSrc="../../media/menu_fill_contact.jpg" x="125">
+			<Title>Contact</Title>
+		</Item>
+	</Main>
+</Navigation>

@@ -1,0 +1,147 @@
+body{
+	background-color:#000000;
+	color:#E73F24;
+	font-family: Arial;
+	}
+a, a:link,a:visited{
+	text-decoration:none;
+	color:#cccccc;
+	font-size:0.7em;
+}
+a:hover{
+	text-decoration:none;
+	color:#ffffff;
+}
+img{
+	border:none;
+	}
+.clear{
+	clear:both;
+	}
+.loaderform, .login{
+	width:226px;
+	height:60px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin: -30px 0px 0px -113px;
+	padding:10px;
+	border:1px dashed #E73F24;
+	background-color:#000000;
+	}
+.login{
+	height:140px;
+	margin: -70px 0px 0px -113px;
+}
+.box{
+	width:620px;
+	height:210px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin: -105px 0px 0px -310px;
+	padding:10px;
+	border:1px dashed #ffffff;
+	}
+.index_holder{
+	width:760px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-100px 0px 0px -380px;
+}
+.title{
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin: -210px 0px 0px -310px;
+	font-weight:900;
+	}
+form div{
+	margin:10px;
+	}
+.content{
+	width:640px;
+	margin:auto;
+	}
+.inlineuploader form{
+	margin:20px;
+}
+.list .item, .inlineuploader{
+	margin:0px 0px 10px 0px;
+	border:1px dashed #cccccc;
+	}
+	
+.list .item .letter {
+	float:left;
+	width:100px;
+	height:100px;
+	font-size: 120px;
+	font-weight:900;
+	line-height:100px;
+	text-transform:uppercase;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+	overflow:hidden;
+	}
+	
+a.biglink, a.midlink{
+	height:100px;
+	overflow:hidden;
+	font-size: 120px;
+	font-weight:900;
+	line-height:90px;
+	text-transform:uppercase;
+	padding:0px;
+	margin:0px;
+	color:#E73F24;
+	}
+a.biglink:hover, a.midlink:hover{
+	color:white;
+	}
+a.midlink{
+	height:50px;
+	overflow:hidden;
+	font-size: 60px;
+	font-weight:900;
+	line-height:50px;
+	}
+	
+.list .item .thumbnail{
+	float:left;
+	width:88px;
+	height:100px;
+	}
+	
+.list .item .details{
+	float:left;
+	margin-left:10px;
+	}
+	
+.nav{
+	border:1px dashed #E73F24;
+	padding:5px;
+	margin:0px 0px 10px 0px;
+	}
+.nav .item{
+	float:left;
+	margin: 0px 10px 0px 0px;
+	}
+.nav .item a{
+	float:left;
+	margin: 0px 10px 0px 0px;
+	font-size: 0.8em;
+	font-weight:900;
+	}
+.caption_input, .caption_submit{
+    color:#cccccc;
+    background-color:#000000;
+    border:1px solid #cccccc;
+    margin:5px 0px 0px 0px;
+    font-size:0.6em;
+    }
+.caption_input{
+    border:1px solid #e73f24;
+    padding:1px 3px 1px 3px ;
+}

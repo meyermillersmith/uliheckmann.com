@@ -1,0 +1,193 @@
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', san-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+h1 {
+  letter-spacing: -3px;
+  font-size: 5em;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+a,a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 0;
+  margin-bottom: .5rem;
+}
+
+h3 {
+    margin: 0;
+    margin-top: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+
+li {
+    margin-bottom: .5rem;
+}
+
+ul {
+    margin-bottom: 1.5rem;
+    list-style: none;
+    padding-left: 2rem;
+}
+
+fieldset {
+  margin-bottom: 1rem;
+  border: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+fieldset label {
+  display: block;
+  margin-bottom: .5rem;
+}
+
+label {
+  margin-right: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+audio {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+
+.button {
+  padding: 1em 2em;
+  background: #dadada;
+  border: 1px solid #bdbdbd;
+  outline: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.link {
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+.application {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container {
+  flex: 1 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar {
+  padding: 2rem 3rem;
+  border-right: 1px solid #d2d2d2;
+  background: #f9f9f9;
+  height: 100vh;
+  overflow: auto;
+}
+
+
+.section-page__hover-image {
+  max-width: 400px;
+  max-height: 400px;
+  margin-bottom: 1rem;
+}
+
+.page {
+  padding: 2rem 4rem 8rem 4rem;
+}
+
+.page__header {
+  margin-bottom: 3rem;
+}
+
+
+.gallery {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.gallery li {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+  line-height: 100px;
+  margin-right: .5rem;
+
+}
+
+
+
+.gallery__empty-item {
+  display: inline-block;
+  background-color: whitesmoke;
+  width: 100px;
+  height: 100px;
+  transition: .2s transform;
+  vertical-align: top;
+}
+
+.gallery__empty-item:hover {
+  transform: scale(1.1);
+}
+
+.gallery__empty-item label {
+  text-align: center;
+  line-height: 100px;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery__image-remove {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 100%;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  transition: .4s transform;
+}
+
+.gallery__image-remove:hover {
+  transform: scale(1.2);
+}
+
+.gallery__image-input {
+  position: absolute;
+  top: -9999px;
+  visibility: hidden;
+  opacity: 0;
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Gallery SYSTEM "../dtd/gallery.dtd">
+<Gallery>
+	<Title>archivepeople</Title>
+    <MediaFile id="79">
+        <File mediaType="jpg" src="../../media/archive_people_01.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_01_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="80">
+        <File mediaType="jpg" src="../../media/archive_people_02.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_02_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="90">
+        <File mediaType="jpg" src="../../media/archive_people_12.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_12_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="82">
+        <File mediaType="jpg" src="../../media/archive_people_04.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_04_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="81">
+        <File mediaType="jpg" src="../../media/archive_people_03.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_03_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="83">
+        <File mediaType="jpg" src="../../media/archive_people_05.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_05_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="84">
+        <File mediaType="jpg" src="../../media/archive_people_06.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_06_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="85">
+        <File mediaType="jpg" src="../../media/archive_people_07.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_07_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="86">
+        <File mediaType="jpg" src="../../media/archive_people_08.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_08_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="106">
+        <File mediaType="jpg" src="../../media/image_106.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_106_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="88">
+        <File mediaType="jpg" src="../../media/archive_people_10.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_10_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="91">
+        <File mediaType="jpg" src="../../media/archive_people_13.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_13_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="92">
+        <File mediaType="jpg" src="../../media/archive_people_14.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_14_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="141">
+        <File mediaType="jpg" src="../../media/image_141.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_141_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="142">
+        <File mediaType="jpg" src="../../media/image_142.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_142_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="96">
+        <File mediaType="jpg" src="../../media/archive_people_18.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_18_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="97">
+        <File mediaType="jpg" src="../../media/archive_people_19.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_19_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="95">
+        <File mediaType="jpg" src="../../media/archive_people_17.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_people_17_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="143">
+        <File mediaType="jpg" src="../../media/image_143.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_143_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="118">
+        <File mediaType="jpg" src="../../media/image_118.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_118_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="120">
+        <File mediaType="jpg" src="../../media/image_120.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_120_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="154">
+        <File mediaType="jpg" src="../../media/image_154.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_154_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="136">
+        <File mediaType="jpg" src="../../media/image_136.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_136_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+</Gallery>

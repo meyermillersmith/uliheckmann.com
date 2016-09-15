@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Assets SYSTEM "../dtd/assets.dtd">
+
+<Assets mainSWFSrc="main.swf">
+
+	<Labels>
+		<Label id="Header.title">www.uliheckmann.com</Label>
+		<Label id="Header.sound.on">Sound on</Label>
+		<Label id="Header.sound.off">Sound off</Label>
+		<Label id="Header.menu">Home</Label>
+		<Label id="Header.slideshow">Slideshow</Label>
+		<Label id="Credits.design">Design</Label>
+
+		<Label id="Loading.loading">Loading</Label>
+		<Label id="Loading.data">Data</Label>
+		<Label id="Loading.image">Image</Label>
+		<Label id="Loading.thumbnails">Thumbnails</Label>
+
+		<Label id="Setting.Letter.Scale">1.2</Label>
+		<Label id="Setting.Letter.Spacing">10</Label>
+		<Label id="Setting.Letter.Line.Spacing">10</Label>
+		<Label id="Setting.Letter.Space.Width">45</Label>
+		<Label id="Setting.NavigationPositioning.Enable">true</Label>
+	</Labels>
+
+	<Links>
+		<Link id="Credits.lessrain" href="http://www.lessrain.com">Less Rain</Link>
+	</Links>
+
+	<Sources>
+		<Source id="Navigation" src="../../data/en/navigation.xml" />
+		<Source id="Gallery.Portfolio.Cars" src="../../data/en/portfolio_cars.xml" />
+		<Source id="Gallery.Portfolio.People" src="../../data/en/portfolio_people.xml" />
+		<Source id="Gallery.Portfolio.Moods" src="../../data/en/portfolio_moods.xml" />
+		<Source id="Gallery.Archive.Cars" src="../../data/en/archive_cars.xml" />
+		<Source id="Gallery.Archive.People" src="../../data/en/archive_people.xml" />
+		<Source id="Clients" src="../../data/en/clients.xml" />
+		<Source id="Contact" src="../../data/en/contact.xml" />
+		<Source id="Soundtrack" src="../../media/soundtrack32.mp3" />
+	</Sources>
+
+	<Fonts>
+		<Font id="HaasUnica" fontSrc="../fonts/haasunica.swf" importSrc="../fonts/haasunica_import.swf" />
+		<Font id="DINEngschrift" fontSrc="../fonts/dinengschrift.swf" importSrc="../fonts/dinengschrift_import.swf" />
+		<Font id="CompactaLTBold" fontSrc="../fonts/compacta_bold.swf" importSrc="../fonts/compacta_bold_import.swf" />
+		<Font id="Gunplay" fontSrc="../fonts/gunplay.swf" importSrc="../fonts/gunplay_import.swf" />
+	</Fonts>
+
+	<StyleSheets>
+		<StyleSheet id="main" src="../../css/western.css" />
+	</StyleSheets>
+
+	<Images>
+		<Image id="fill.main" src="../../media/menu_fill_main_16.jpg" />
+		<Image id="fill.cars" src="../../media/menu_fill_portfolio_cars.jpg" />
+		<Image id="fill.people" src="../../media/menu_fill_portfolio_people.jpg" />
+		<!--
+		<Image id="fill.moods" src="../../media/menu_fill_portfolio_moods.jpg" />
+		 -->
+		<Image id="fill.cars.archive" src="../../media/menu_fill_archive_cars.jpg" />
+		<Image id="fill.people.archive" src="../../media/menu_fill_archive_people.jpg" />
+		<Image id="fill.clients" src="../../media/menu_fill_clients.jpg" />
+		<Image id="fill.contact" src="../../media/menu_fill_contact.jpg" />
+	</Images>
+
+</Assets>

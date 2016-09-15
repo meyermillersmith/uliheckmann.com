@@ -1,0 +1,1 @@
+import lessrain.lib.utils.text.ExtendedStyleSheet;interface lessrain.lib.utils.text.IRTLProxy {	public function convert( text_:String, styleSheet_:ExtendedStyleSheet, styleClass_:String, fieldWidth_:Number, widthBuffer_:Number, isMultiline_:Boolean ):Void;	public function getText():String;	public function getTextWidth():Number;}

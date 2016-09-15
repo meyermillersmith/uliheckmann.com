@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-source id="11776942615651345940897" dialect="de.lesspain.mysql" driver="1176453328620903426466" display-name="uliheckmann@localhost" url="jdbc:mysql://localhost:3308/uliheckmann">
+  <property name="HOST">localhost</property>
+  <property name="user">root</property>
+  <property name="password">thomas</property>
+  <property name="DBNAME">uliheckmann</property>
+  <property name="PORT">3308</property>
+</data-source>
+

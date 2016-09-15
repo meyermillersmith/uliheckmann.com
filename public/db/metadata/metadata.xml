@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MetaData xmlns:mysql="http://lesspain.de/mysql" dialect="de.lesspain.mysql">
+  <Schema name="uliheckmann">
+    <Table name="clients" mysql:engine="InnoDB">
+      <Column name="id" type="mediumint" mysql:length="9" mysql:signed="true" nullable="false" identity="true" />
+      <Column name="name" type="varchar" mysql:length="255" mysql:charset="utf8" nullable="false" />
+      <PrimaryKey nameSystemGenerated="true">
+        <ColumnRef name="id" />
+      </PrimaryKey>
+      <mysql:comment>InnoDB free: 10240 kB</mysql:comment>
+    </Table>
+    <Table name="file_types" mysql:engine="InnoDB">
+      <Column name="id" type="tinyint" mysql:length="1" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="name" type="tinytext" mysql:charset="utf8" nullable="false" />
+      <PrimaryKey nameSystemGenerated="true">
+        <ColumnRef name="id" />
+      </PrimaryKey>
+      <mysql:comment>InnoDB free: 10240 kB</mysql:comment>
+    </Table>
+    <Table name="files" mysql:engine="InnoDB">
+      <Column name="type" type="tinyint" mysql:length="4" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="mediafile_id" type="mediumint" mysql:length="4" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="src" type="varchar" mysql:length="200" mysql:charset="utf8" nullable="false" default="''" />
+      <Column name="width" type="int" mysql:length="4" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="height" type="int" mysql:length="4" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="mediatype" type="varchar" mysql:length="3" mysql:charset="utf8" nullable="false" default="''" />
+      <PrimaryKey nameSystemGenerated="true">
+        <ColumnRef name="mediafile_id" />
+        <ColumnRef name="type" />
+      </PrimaryKey>
+      <Index name="files_ibfk_2">
+        <ColumnRef name="type" />
+      </Index>
+      <mysql:comment>InnoDB free: 10240 kB</mysql:comment>
+    </Table>
+    <Table name="mediafiles" mysql:engine="InnoDB">
+      <Column name="id" type="mediumint" mysql:length="9" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="copyright" type="tinytext" mysql:charset="utf8" />
+      <Column name="caption" type="mediumtext" mysql:charset="utf8" />
+      <Column name="align" type="varchar" mysql:length="1" mysql:charset="utf8" nullable="false" default="'L'" />
+      <Column name="enableFill" type="tinyint" mysql:length="1" mysql:signed="true" nullable="false" default="'1'" />
+      <PrimaryKey nameSystemGenerated="true">
+        <ColumnRef name="id" />
+      </PrimaryKey>
+      <mysql:comment>InnoDB free: 10240 kB</mysql:comment>
+    </Table>
+    <Table name="portfolio_names" mysql:engine="InnoDB">
+      <Column name="id" type="mediumint" mysql:length="9" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="name" type="tinytext" mysql:charset="utf8" nullable="false" />
+      <mysql:comment>InnoDB free: 10240 kB</mysql:comment>
+    </Table>
+    <Table name="portfolios" mysql:engine="InnoDB">
+      <Column name="id" type="tinyint" mysql:length="3" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="mediafile_id" type="mediumint" mysql:length="9" mysql:signed="true" nullable="false" default="'0'" />
+      <Column name="position" type="tinyint" mysql:length="4" mysql:signed="true" nullable="false" default="'0'" />
+      <PrimaryKey nameSystemGenerated="true">
+        <ColumnRef name="id" />
+        <ColumnRef name="mediafile_id" />
+      </PrimaryKey>
+      <mysql:comment>InnoDB free: 10240 kB</mysql:comment>
+    </Table>
+  </Schema>
+</MetaData>
+

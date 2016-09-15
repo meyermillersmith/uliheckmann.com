@@ -1,0 +1,87 @@
+a:link
+{
+	color: #ff4317;
+}
+a:hover
+{
+	color: #ffffff;
+}
+.header
+{
+	font-family: "HaasUnica";
+	font-size: 12px;
+	leading: 0pt;
+	color: #ff4317;
+	
+	embed-font: true;
+	anti-alias-type: advanced;
+	anti-alias-thickness: 50;
+	anti-alias-sharpness: -50;
+	grid-fit-type: subpixel;
+}
+.caption
+{
+	font-family: "HaasUnica";
+	font-size: 12px;
+	leading: 0pt;
+	color: #ffffff;
+	
+	embed-font: true;
+	anti-alias-type: advanced;
+	anti-alias-thickness: 50;
+	anti-alias-sharpness: -50;
+	grid-fit-type: subpixel;
+}
+.clients
+{
+	font-family: "HaasUnica";
+	font-size: 18px;
+	leading: -4pt;
+	color: #ffffff;
+	
+	embed-font: true;
+	anti-alias-type: advanced;
+	anti-alias-thickness: 50;
+	anti-alias-sharpness: -50;
+	grid-fit-type: subpixel;
+}
+.contact
+{
+	font-family: "HaasUnica";
+	font-size: 18px;
+	leading: -4pt;
+	color: #ffffff;
+	
+	embed-font: true;
+	anti-alias-type: advanced;
+	anti-alias-thickness: 50;
+	anti-alias-sharpness: -50;
+	grid-fit-type: subpixel;
+}
+.letterDIN
+{
+	font-family: "DINEngschrift";
+	font-size: 140px;
+	leading: 0pt;
+	color: #ffffff;
+	
+	embed-font: true;
+}
+.letterCompacta
+{
+	font-family: "Compacta LT Bold";
+	font-size: 250px;
+	leading: 0pt;
+	color: #ffffff;
+	
+	embed-font: true;
+}
+.letterGunplay
+{
+	font-family: "Gunplay";
+	font-size: 150px;
+	leading: 0pt;
+	color: #ffffff;
+	
+	embed-font: true;
+}

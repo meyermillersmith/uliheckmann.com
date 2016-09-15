@@ -1,0 +1,182 @@
+<DATA>
+
+	<ROW>
+		<id>5</id>
+		<name>GQ</name>
+	</ROW>
+
+	<ROW>
+		<id>6</id>
+		<name>Microsoft</name>
+	</ROW>
+
+	<ROW>
+		<id>9</id>
+		<name>Siemens</name>
+	</ROW>
+
+	<ROW>
+		<id>11</id>
+		<name>Sony</name>
+	</ROW>
+
+	<ROW>
+		<id>12</id>
+		<name>Stern</name>
+	</ROW>
+
+	<ROW>
+		<id>13</id>
+		<name>Vodafone</name>
+	</ROW>
+
+	<ROW>
+		<id>14</id>
+		<name>Volkswagen</name>
+	</ROW>
+
+	<ROW>
+		<id>15</id>
+		<name>WWK</name>
+	</ROW>
+
+	<ROW>
+		<id>16</id>
+		<name>Daimler</name>
+	</ROW>
+
+	<ROW>
+		<id>20</id>
+		<name>New York Magazine</name>
+	</ROW>
+
+	<ROW>
+		<id>22</id>
+		<name>ESQUIRE US</name>
+	</ROW>
+
+	<ROW>
+		<id>23</id>
+		<name>Wallpaper Magazine</name>
+	</ROW>
+
+	<ROW>
+		<id>24</id>
+		<name>Mercedes</name>
+	</ROW>
+
+	<ROW>
+		<id>26</id>
+		<name>Vanity Fair</name>
+	</ROW>
+
+	<ROW>
+		<id>27</id>
+		<name>Rolling Stone Magazine</name>
+	</ROW>
+
+	<ROW>
+		<id>29</id>
+		<name>BMW AG</name>
+	</ROW>
+
+	<ROW>
+		<id>30</id>
+		<name>SMART cars</name>
+	</ROW>
+
+	<ROW>
+		<id>31</id>
+		<name>Aston Martin</name>
+	</ROW>
+
+	<ROW>
+		<id>32</id>
+		<name>Corbis Outline</name>
+	</ROW>
+
+	<ROW>
+		<id>33</id>
+		<name>Porsche AG</name>
+	</ROW>
+
+	<ROW>
+		<id>34</id>
+		<name>DIE ZEIT </name>
+	</ROW>
+
+	<ROW>
+		<id>35</id>
+		<name>AUDI</name>
+	</ROW>
+
+	<ROW>
+		<id>36</id>
+		<name>VIBE Magazine</name>
+	</ROW>
+
+	<ROW>
+		<id>37</id>
+		<name>Madame Magazine</name>
+	</ROW>
+
+	<ROW>
+		<id>38</id>
+		<name>AMG</name>
+	</ROW>
+
+	<ROW>
+		<id>39</id>
+		<name>Hyundai Motors America</name>
+	</ROW>
+
+	<ROW>
+		<id>40</id>
+		<name>BMG</name>
+	</ROW>
+
+	<ROW>
+		<id>41</id>
+		<name>Universal Records</name>
+	</ROW>
+
+	<ROW>
+		<id>42</id>
+		<name>Warner Records</name>
+	</ROW>
+
+	<ROW>
+		<id>43</id>
+		<name>Glamour Magazine</name>
+	</ROW>
+
+	<ROW>
+		<id>44</id>
+		<name>VOGUE Business</name>
+	</ROW>
+
+	<ROW>
+		<id>45</id>
+		<name>Vanity Fair Magazine</name>
+	</ROW>
+
+	<ROW>
+		<id>46</id>
+		<name>Honda ACURA</name>
+	</ROW>
+
+	<ROW>
+		<id>47</id>
+		<name>EQUUS</name>
+	</ROW>
+
+	<ROW>
+		<id>48</id>
+		<name>MERCEDES BENZ</name>
+	</ROW>
+
+	<ROW>
+		<id>49</id>
+		<name>FORD USA</name>
+	</ROW>
+</DATA>

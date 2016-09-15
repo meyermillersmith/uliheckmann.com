@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="/cms/styles/normalize.css">
+        <link rel="stylesheet" href="/cms/styles/main.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+
+        <div class='application'>
+          <div class='sidebar'>
+            <h3>uliheckmann.com</h3>
+
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <h3>Portfolio</h3>
+                <ul>
+                  <li>
+                    <a href="#/section/portfolio_cars">Cars</a>
+                  </li>
+                  <li>
+                    <a href="#/section/portfolio_people">People</a>
+                  </li>
+                  <li>
+                    <a href="#/section/portfolio_moods">Moods</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h3>Archive</h3>
+                <ul>
+                  <li>
+                    <a href="#/section/portfolio_cars">Cars</a>
+                  </li>
+                  <li>
+                    <a href="#/section/portfolio_people">People</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#/section/contact">Contact</a>
+              </li>
+              <li>
+                <a href="#/section/clients">Clients</a>
+              </li>
+            </ul>
+          </div>
+          <div class='main-container js-main-region'>
+
+          </div>
+        </div>
+
+        {{{{raw}}}}
+          <template class='js-home-template'>
+            <div class='page'>
+              <div class='page__header'>
+                <h1>Home</h1>
+              </div>
+
+              <section>
+                <fieldset>
+                  <label>Background Color</label>
+                  <input type="color" name="favcolor" class='js-bgcolor-input' value="{{settings.background_color}}">
+                </fieldset>
+                  <fieldset>
+                    <label>Backgound Music</label>
+                    <audio class='js-background-music' controls src="{{settings.background_music}}">
+                      Your browser does not support the audio element.
+                    </audio>
+
+                    <input type='file' name='music_file' class='js-music-file'/>
+                  </fieldset>
+                  <button class='js-home-submit-button button'>Submit Settings</button>
+              </section>
+            </div>
+          </template>
+
+          <template class='js-section-template'>
+            <section class='page'>
+              <div class='page__header'>
+                <h1>
+                  {{parent}} {{title}}
+                </h1>
+                <p>Section currently <span class='js-section-status'>{{#if enabled}}enabled{{else}}disabled{{/if}}</span>. <button class='link js-section-status-toggle'>{{#if enabled}}Disable it.{{else}}Enable it.{{/if}}</button></p>
+              </div>
+
+              <section>
+                <h2>Hover Image</h2>
+                <div>
+                  <label for='hover-image-file'>
+                    <img class='section-page__hover-image js-hover-image' src='{{hover_image}}' />
+                  </label>
+                </div>
+                <div>
+                  <form class='js-hover-image-form' action='/cms/api/section/{{_id}}' method='POST'>
+                    <fieldset>
+                      <h3>Upload a new image</h3>
+                      <input type='file' name='hover_file' class='js-hover-image-file' id='hover-image-file'/>
+                    </fieldset>
+                    <button class='js-hover-image-submit-button button'>Submit</button>
+                  </form>
+              </section>
+
+
+              <section>
+                <h2>Gallery</h2>
+
+                <ul class='gallery' id='gallery'>
+                  {{#each images}}<li style='background-image: url("{{path}}")' data-id='{{_id}}' data-position={{position}}>
+                    <i class='gallery__image-remove js-gallery-image-remove'></i>
+                  </li>{{/each}}
+                </ul>
+                <div class='js-gallery-no-image-item gallery__empty-item'>
+                  <input type='file' class='js-gallery-new-image gallery__image-input' id='gallery-new-image'/>
+                  <label for='gallery-new-image'>Add Image</label>
+                </div>
+                <!-- <input type='file' class='js-gallery-new-image' id='gallery-new-image'/>
+                <label for='gallery-new-image' class='button'>Add Image</label> -->
+              </section>
+
+            </section>
+          </template>
+          {{{{/raw}}}}
+
+
+        <script>
+          window.App = {};
+          window.App.settings = {{{json_stringify settings}}};
+        </script>
+
+        <script src="/jquery/dist/jquery.js"></script>
+        <script src="/handlebars/handlebars.js"></script>
+        <script src="/Sortable/Sortable.min.js"></script>
+        <script src="/cms/scripts/vendor/underscore.js"></script>
+        <script src="/cms/scripts/vendor/backbone.js"></script>
+        <script src="/cms/scripts/vendor/backbone.js"></script>
+        <script src="/cms/scripts/client.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT Gallery (Title, MediaFile+)>
+
+	<!ELEMENT Title (#PCDATA)>
+
+	<!ELEMENT MediaFile (File, PreviewFile?, LargeFile?, Caption?, Copyright?)>
+	<!ATTLIST MediaFile
+			  id						CDATA			#IMPLIED
+	>
+
+		<!ELEMENT File EMPTY>
+		<!ATTLIST File
+				  src						CDATA					#REQUIRED
+				  mediaType			(jpg|flv|swf|mp3)		#REQUIRED
+				  width					CDATA					#IMPLIED
+				  height					CDATA					#IMPLIED
+				  align					(left|right)				"left"
+				  enableFill				(true|false)				"true"
+				  duration				CDATA					#IMPLIED
+				  autoPlay				(true|false)				#IMPLIED
+				  loop					(true|false)				#IMPLIED
+		>
+
+		<!ELEMENT PreviewFile EMPTY>
+		<!ATTLIST PreviewFile
+				  src						CDATA			#REQUIRED
+				  mediaType			(jpg)				"jpg"
+				  width					CDATA			#IMPLIED
+				  height					CDATA			#IMPLIED
+		>
+
+		<!ELEMENT LargeFile EMPTY>
+		<!ATTLIST LargeFile
+				  src						CDATA			#REQUIRED
+				  mediaType			(jpg)				"jpg"
+				  width					CDATA			#IMPLIED
+				  height					CDATA			#IMPLIED
+		>
+
+		<!ELEMENT Caption (#PCDATA)>
+		<!ELEMENT Copyright (#PCDATA)>

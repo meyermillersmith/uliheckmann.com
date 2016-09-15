@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Contact SYSTEM "../dtd/contact.dtd">
+
+<Contact>
+	<Title>Contact</Title>
+	<Content><![CDATA[Uli Heckmann<br />
+Photography<br />
+Adelheidstrasse 14<br />
+80798 München<br /><br />
+Phone: +49 89 527280<br />
+Fax: +49 89 5237111<br />
+Mobile: +49 177 5272800<br /><br />
+E-mail: <a href="mailto:uli.heckmann@mac.com">uli.heckmann@mac.com</a><br />
+<!-- Internet: <a href="http:www.uliheckmann.com">www.uliheckmann.com</a><br /> --><br />
+<a href="../../uliheckmann.vcf" target="_blank">Download Vcard</a><br /><br /><br />
+<a href="http://www.homepage.mac.com/uli.heckmann" target="_blank">Login</a><br /><br /><br /><br />
+<font size="12">Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE160183055</font>]]></Content>
+</Contact>

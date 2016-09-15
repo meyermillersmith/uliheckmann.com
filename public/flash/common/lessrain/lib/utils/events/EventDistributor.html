@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<title>EventDistributor class</title>
+	<style type="text/css">
+html, body, div {
+	padding:0;
+	margin:0;
+}
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:.75em;
+	background-color:#E0E0E0;
+}
+h1, h2, h3, h4, h5 {
+	padding:2px;
+	margin:0;
+	color:white;
+}
+ul, ol {
+	color:#600;
+}
+td {
+	vertical-align:top;
+}
+pre.code, code {
+	color:#124;
+	font-size:110%;
+}
+pre {
+	padding:5px;
+	background-color:#F8FCFF;
+	border:1px solid #D0E8FF;
+	font-size:110%;
+	overflow:auto;
+}
+hr {
+	height:1px;
+	background-color:#036;
+	margin:2em 0;
+}
+.shadow-bottom {
+	overflow:hidden;
+	border-top:1px solid #666;
+	height:2px;
+	background-color:#999;
+	border-bottom:2px solid #DDD;
+}
+.header h1 {
+	background-color:#036;
+	font-size:250%;
+	padding-top:1em;
+	padding-bottom:0;
+}
+.header h2 {
+	background-color:#036;
+	font-size:120%;
+	padding-top:0;
+	padding-bottom:1em;
+}
+.header h3 {
+	background-color:#369;
+	font-size:110%;
+}
+.header h4 {
+	background-color:#69C;
+	font-size:110%;
+}
+.header h1, .header h2, .header h3, .header h4 {
+	padding-left:12px;
+}
+.header .identifier {
+	width:10em;
+	float:left;
+}
+.header .identified {
+	margin-left:10em;
+}
+
+.content {
+	padding:5px;
+}
+.content-block {
+	margin:2em 1em;
+	border:1px solid #69C;
+	border-right:2px solid #036;
+	border-bottom:2px solid #036;
+	background-color:white;
+}
+.content-block h2 {
+	background-color:#036;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+.content-block h3 {
+	background-color:#369;
+	margin-bottom:.5em;
+}
+.content-block h4 {
+	margin-top:.5em;
+	margin-bottom:.5em;
+	background-color:#F0F0F0;
+	color:black;
+}
+.pane-left {
+	width:75%;
+	background-color:white;
+}
+.pane-right {
+	width:25%;
+	float:right;
+}
+.pane-right .content-block{
+	background-color:#2A5C8F;
+}
+.pane-right h2 {
+	background-color:#036;
+	font-size:110%;
+}
+.pane-right .on, .pane-right .off {
+	color:white;
+	padding:1px;
+	padding-left:.5em;
+}
+.pane-right .on {
+	background-color:#2A5C8F;
+}
+.pane-right .off {
+	background-color:#369;
+}
+.pane-right ul, .pane-right ul li {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.pane-right ul li a {
+	color:white;
+	text-decoration:none;
+}
+.pane-right ul li a:hover {
+	text-decoration:underline;
+}
+	</style>
+</head>
+<body>
+
+<div class="pane-right">
+	
+	
+	<div class="content-block">
+		<h2>Methods</h2>
+		<ul>
+			<li class="on"><a href="#initialize">initialize()</a></li><li class="off"><a href="#addEventListener">addEventListener()</a></li><li class="on"><a href="#removeEventListener">removeEventListener()</a></li><li class="off"><a href="#distributeEvent">distributeEvent()</a></li><li class="on"><a href="#finalize">finalize()</a></li>
+		</ul>
+	</div>
+	
+</div>
+<div class="pane-left">
+<div class="header">
+	<h1>EventDistributor class</h1>
+	<h2>lessrain.lib.utils.events.EventDistributor</h2>
+	<h3> </h3>
+	<h4> </h4>
+</div>
+<div class="shadow-bottom">&nbsp;</div>
+
+<div class="content-block">
+	<h2>Overview</h2>
+	<div class="content">
+		
+		
+		<h4>Usage</h4>
+		<code>
+		class lessrain.lib.utils.events.EventDistributor</code>
+		<h4>Description</h4>
+			EventDistributor is a class to distribute events.
+		
+		
+	</div>
+</div>
+
+
+
+
+
+<br />
+<div class="content-block">
+	<h2>Methods</h2>
+	<div class="content">
+		<a name="initialize">&nbsp;</a>
+		<h3>initialize</h3>
+		<h4>Usage</h4>
+		<code>
+		public function initialize(implementer:IDistributor) :Void</code>
+		<h4>Description</h4>
+			EventDistributor is a class to distribute events.
+EventDistributor is glued on the class which would like to use EventDistributor
+		
+		<h4>Parameters</h4>
+			<dl>
+				<dt><b>implementer</b></dt>
+				<dd>a class which implements the IDistributor interface</dd>
+			</dl>
+		
+		<h4>Returns</h4>
+		
+		Nothing.
+		
+		
+	<hr />
+		<a name="addEventListener">&nbsp;</a>
+		<h3>addEventListener</h3>
+		<h4>Usage</h4>
+		<code>
+		public function addEventListener(type:String,func:Function) :Void</code>
+		<h4>Description</h4>
+			adds an EventListener to the EventDistributor
+		
+		<h4>Parameters</h4>
+			<dl>
+				<dt><b>type</b></dt>
+				<dd>the name of the event</dd>
+			</dl><dl>
+				<dt><b>func</b></dt>
+				<dd>the function which is called when the event is fired</dd>
+			</dl>
+		
+		<h4>Returns</h4>
+		
+		Nothing.
+		
+		
+	<hr />
+		<a name="removeEventListener">&nbsp;</a>
+		<h3>removeEventListener</h3>
+		<h4>Usage</h4>
+		<code>
+		public function removeEventListener(type:String,func:Function) :Void</code>
+		<h4>Description</h4>
+			removes an EventListener from the EventDistributor
+		
+		<h4>Parameters</h4>
+			<dl>
+				<dt><b>type</b></dt>
+				<dd>the name of the event</dd>
+			</dl><dl>
+				<dt><b>func</b></dt>
+				<dd>the function which is called when the event is fired</dd>
+			</dl>
+		
+		<h4>Returns</h4>
+		
+		Nothing.
+		
+		
+	<hr />
+		<a name="distributeEvent">&nbsp;</a>
+		<h3>distributeEvent</h3>
+		<h4>Usage</h4>
+		<code>
+		public function distributeEvent(eventObject:IEvent) :Void</code>
+		<h4>Description</h4>
+			distributes an EventObject to specific Listeners of EventDistributor.
+Which Listeners receive the event is decided via getType() method of the DistributorEvent.
+Furthermore the DistributorEvent is distributed along with the IEvent implementing
+eventObject to the listeners, too to provide an easy way to remove the listener.
+		
+		<h4>Parameters</h4>
+			<dl>
+				<dt><b>eventObject</b></dt>
+				<dd>must implement IEvent</dd>
+			</dl>
+		
+		<h4>Returns</h4>
+		
+		Nothing.
+		
+		
+	<hr />
+		<a name="finalize">&nbsp;</a>
+		<h3>finalize</h3>
+		<h4>Usage</h4>
+		<code>
+		public function finalize() :Void</code>
+		<h4>Description</h4>
+			when finalize() is invoked, all events are removed 
+and EventDistributor will be destroyed completely.
+		
+		
+		<h4>Returns</h4>
+		
+		Nothing.
+		
+		
+	</div>
+</div>
+
+
+<br />
+&nbsp;
+</div>
+
+</body>
+</html>

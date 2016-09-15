@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+ "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>admin</shortname>
+    <uri>http://www.lessrain.com/projects/tags/admin.jar</uri>
+    <info>Admin Tags</info>
+    
+  <!--  tag files  -->
+  <tag-file>
+    <name>nav</name>
+    <path>/WEB-INF/tags/admin/nav.tag</path>
+  </tag-file>  
+  <tag-file>
+    <name>thumbnail</name>
+    <path>/WEB-INF/tags/admin/thumbnail.tag</path>
+  </tag-file>    
+  <tag-file>
+    <name>uploader</name>
+    <path>/WEB-INF/tags/admin/uploader.tag</path>
+  </tag-file>    
+ 
+</taglib>

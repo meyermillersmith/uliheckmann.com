@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Gallery SYSTEM "../dtd/gallery.dtd">
+<Gallery>
+	<Title>moods</Title>
+    <MediaFile id="999">
+        <File mediaType="jpg" src="../../media/image_119.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_119_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+</Gallery>

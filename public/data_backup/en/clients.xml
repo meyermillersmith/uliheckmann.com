@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Clients SYSTEM "../dtd/clients.dtd">
+
+<Clients>
+	<Title>Clients</Title>
+	<Client>BMW</Client>
+	<Client>Daimler-Chrysler</Client>
+	<Client>Microsoft</Client>
+	<Client>Porsche</Client>
+	<Client>Renault</Client>
+	<Client>Siemens</Client>
+	<Client>Smart</Client>
+	<Client>Volkswagen</Client>
+	<Client>WWK</Client>
+	<Client>Vodafone</Client>
+	<Client>BMG</Client>
+	<Client>Sony</Client>
+	<Client>GQ</Client>
+	<Client>Stern</Client>
+	<Client>Die Zeit</Client>
+</Clients>

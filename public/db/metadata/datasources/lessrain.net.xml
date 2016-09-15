@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-source id="11775847159611329746935" dialect="de.lesspain.mysql" driver="1176453328620903426466" display-name="uliheckmann@www.lessrain.net" url="jdbc:mysql://www.lessrain.net/uliheckmann">
+  <property name="HOST">www.lessrain.net</property>
+  <property name="user">db_remote_admin</property>
+  <property name="password">eir0Quah</property>
+  <property name="DBNAME">uliheckmann</property>
+</data-source>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Navigation SYSTEM "../dtd/navigation.dtd">
+
+<Navigation>
+	<Main menuImageSrc="../../media/menu_fill_main_16.jpg">
+		<Item x="124">
+			<Title>Uli Heckmann</Title>
+		</Item>
+		{{#if portfolio}}
+		<Item x="0">
+			<Title>Portfolio</Title>
+			{{#with portfolio.cars}}
+			<Item pageID="/Gallery/Portfolio/Cars" menuImageSrc="{{hover_image}}" x="0">
+				<Title>Cars</Title>
+			</Item>
+			{{/with}}
+			{{#with portfolio.people}}
+			<Item pageID="/Gallery/Portfolio/People" menuImageSrc="{{hover_image}}" x="296">
+				<Title>People</Title>
+			</Item>
+			{{/with}}
+			{{#if portfolio.moods}}
+			<Item pageID="/Gallery/Portfolio/Moods" menuImageSrc="{{hover_image}}" x="693">
+				<Title>Moods</Title>
+			</Item>
+			{{/if}}
+		</Item>
+		{{/if}}
+		{{#if archive}}
+		<Item x="52">
+			<Title>Archive</Title>
+			{{#with archive.cars}}
+			<Item pageID="/Gallery/Archive/Cars" menuImageSrc="{{hover_image}}" x="52">
+				<Title>Cars</Title>
+			</Item>
+			{{/with}}
+			{{#with archive.cars}}
+			<Item pageID="/Gallery/Archive/People" menuImageSrc="{{hover_image}}" x="372">
+				<Title>People</Title>
+			</Item>
+			{{/with}}
+		</Item>
+		{{/if}}
+		{{#with clients}}
+		<Item pageID="/Clients" menuImageSrc="{{hover_image}}" x="310">
+			<Title>Clients</Title>
+		</Item>
+		{{/with}}
+		{{#with contact}}
+		<Item pageID="/Contact" menuImageSrc="{{hover_image}}" x="125">
+			<Title>Contact</Title>
+		</Item>
+		{{/with}}
+	</Main>
+</Navigation>

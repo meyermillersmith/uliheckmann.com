@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-source id="11805426704984384438" dialect="de.lesspain.mysql" driver="1176453328620903426466" display-name="heckmann@localhost" url="jdbc:mysql://localhost/heckmann">
+  <property name="HOST">localhost</property>
+  <property name="user">paul</property>
+  <property name="password">porpoise</property>
+  <property name="DBNAME">heckmann</property>
+</data-source>
+

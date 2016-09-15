@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Gallery SYSTEM "../dtd/gallery.dtd">
+<Gallery>
+	<Title>archivecars</Title>
+    <MediaFile id="3">
+        <File mediaType="jpg" src="../../media/cars_03.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/cars_03_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="54">
+        <File mediaType="jpg" src="../../media/archive_cars_02.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_02_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="56">
+        <File mediaType="jpg" src="../../media/archive_cars_04.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_04_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="57">
+        <File mediaType="jpg" src="../../media/archive_cars_05.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_05_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="58">
+        <File mediaType="jpg" src="../../media/archive_cars_06.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_06_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="59">
+        <File mediaType="jpg" src="../../media/archive_cars_07.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_07_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="60">
+        <File mediaType="jpg" src="../../media/archive_cars_08.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_08_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="61">
+        <File mediaType="jpg" src="../../media/archive_cars_09.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_09_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="62">
+        <File mediaType="jpg" src="../../media/archive_cars_10.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_10_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="63">
+        <File mediaType="jpg" src="../../media/archive_cars_11.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_11_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="64">
+        <File mediaType="jpg" src="../../media/archive_cars_12.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_12_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="65">
+        <File mediaType="jpg" src="../../media/archive_cars_13.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_13_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="66">
+        <File mediaType="jpg" src="../../media/archive_cars_14.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_14_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="68">
+        <File mediaType="jpg" src="../../media/archive_cars_16.jpg" width="990" height="600" align="right" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_16_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="70">
+        <File mediaType="jpg" src="../../media/archive_cars_18.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_18_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="72">
+        <File mediaType="jpg" src="../../media/archive_cars_20.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_20_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="73">
+        <File mediaType="jpg" src="../../media/archive_cars_21.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_21_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="75">
+        <File mediaType="jpg" src="../../media/archive_cars_23.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_23_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="76">
+        <File mediaType="jpg" src="../../media/archive_cars_24.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_24_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="77">
+        <File mediaType="jpg" src="../../media/archive_cars_25.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_25_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="78">
+        <File mediaType="jpg" src="../../media/archive_cars_26.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_26_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="22">
+        <File mediaType="jpg" src="../../media/cars_22.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/cars_22_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="53">
+        <File mediaType="jpg" src="../../media/archive_cars_01.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/archive_cars_01_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="20">
+        <File mediaType="jpg" src="../../media/cars_20.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/cars_20_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="114">
+        <File mediaType="jpg" src="../../media/image_114.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_114_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="113">
+        <File mediaType="jpg" src="../../media/image_113.jpg" width="990" height="600" align="left" enableFill="false"/>
+        <PreviewFile mediaType="jpg" src="../../media/image_113_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+    <MediaFile id="24">
+        <File mediaType="jpg" src="../../media/cars_24.jpg" width="990" height="600" align="left" enableFill="true"/>
+        <PreviewFile mediaType="jpg" src="../../media/cars_24_thumb.jpg" width="88" height="100"/>
+        <Caption/>
+    </MediaFile>
+</Gallery>
