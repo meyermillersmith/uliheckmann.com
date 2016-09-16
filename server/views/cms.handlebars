@@ -99,7 +99,7 @@
                 <p>Section currently <span class='js-section-status'>{{#if enabled}}enabled{{else}}disabled{{/if}}</span>. <button class='link js-section-status-toggle'>{{#if enabled}}Disable it.{{else}}Enable it.{{/if}}</button></p>
               </div>
 
-              <section>
+              <section class='page__section'>
                 <h2>Hover Image</h2>
                 <div>
                   <label for='hover-image-file'>
@@ -116,8 +116,8 @@
                   </form>
               </section>
 
-
-              <section>
+              {{#if parent}}
+              <section class='page__section'>
                 <h2>Gallery</h2>
 
                 <ul class='gallery' id='gallery'>
@@ -132,7 +132,7 @@
                 <!-- <input type='file' class='js-gallery-new-image' id='gallery-new-image'/>
                 <label for='gallery-new-image' class='button'>Add Image</label> -->
               </section>
-
+              {{/if}}
             </section>
           </template>
           {{{{/raw}}}}

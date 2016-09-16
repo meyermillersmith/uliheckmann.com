@@ -39,7 +39,6 @@ app.set('views', 'server/views');
 app.use('/uploads', express.static(UPLOAD_PATH));
 app.use(express.static('public'));
 app.use(express.static('bower_components'));
-console.log(UPLOAD_PATH);
 
 
 
@@ -81,7 +80,6 @@ app.post('/cms/api/settings', function(req, res) {
 
   if(background_color && !req.files) {
     Settings.findOneAndUpdate({}, {$set: {background_color: background_color}}).then((updatedDoc) => {
-      console.log('updatedDoc ', updatedDoc);
       res.send({status: 'success'});
     });
   } else if(background_color && req.files) {
@@ -98,7 +96,6 @@ app.post('/cms/api/settings', function(req, res) {
           background_color: background_color
         }})
         .then((updatedDoc) => {
-          console.log('updatedDoc ', updatedDoc);
           res.send({status: 'success', file: `/uploads/${fileName}`});
         });
       });
@@ -130,7 +127,6 @@ app.post(`/cms/api/section/:id`, function(req, res) {
   var id = req.params.id;
 
   if(req.files) {
-    console.log(req.files.file);
     var file = req.files.file;
     var fileName = file.name
     var finalFilePath = path.join(UPLOAD_PATH, fileName);
@@ -164,7 +160,6 @@ app.post(`/cms/api/section/:id/add-image`, function(req, res) {
     var fileName = `${fileId}${fileExt}`;
 
     var finalFilePath = path.join(UPLOAD_PATH, fileName);
-    console.log(file);
     file.mv(finalFilePath, function(err) {
       if(err) return res.status(500).send({status: 'fail', error: err});
 
@@ -212,16 +207,15 @@ app.post(`/cms/api/section/:id/reorder-images`, function(req, res) {
   var images = req.body.images;
 
   var promises = images.map(function(image_id, index) {
-    console.log('index ', index);
     return PortfolioImages.findOneAndUpdate({_id: image_id}, {$set: {position: index}});
   });
 
-  console.log(promises);
+
   Promise.all(promises).then(function() {
-    console.log('in callback');
+
     res.send({status: 'success'});
   }, function(err) {
-    console.log('in failure');
+
     return res.status(500).send({status: 'fail', error: err});
   });
 
@@ -236,7 +230,7 @@ app.get(`/api/navigation.xml`, function(req, res) {
       navigation[section.parent] = navigation[section.parent] || {};
       navigation[section.parent][section.title] = section;
     });
-    console.log(navigation);
+
     res.render('xmls/navigation.xml.handlebars', navigation);
   });
 });
@@ -274,13 +268,13 @@ app.get(`/api/:id.xml`, function(req, res) {
     PortfolioImages.find({section_id: section._id.toString()}, {sort: {'position': 1}})
     .then(function(images) {
       section.images = images;
-      console.log('section ', section);
+
       res.render(`xmls/section.xml.handlebars`, section);
     });
   });
 });
 
-console.log('process.env.PORT ', process.env.PORT);
+
 var listener = app.listen(process.env.PORT || 3000, function () {
   console.log('Server Started');
 });

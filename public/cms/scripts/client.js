@@ -7,11 +7,9 @@ App.Router = Backbone.Router.extend({
   },
 
   initialize: function() {
-    console.log('initialize');
   },
 
   home: function() {
-    console.log('home');
     if(this.currentView) this.currentView.remove();
     this.currentView = (new App.HomeView());
     this.currentView.render();
@@ -19,15 +17,12 @@ App.Router = Backbone.Router.extend({
   },
 
   section: function(section) {
-    console.log('section');
+
     var _this = this;
     $.getJSON(`/cms/api/section/${section}`).then(function(response) {
-      console.log('in here');
       if(_this.currentView) _this.currentView.remove();
       _this.currentView = (new App.SectionView({model: response}));
-      console.log('herer');
       _this.currentView.render();
-      console.log('this.currentView.el ', _this.currentView.el);
       $('.js-main-region').html(_this.currentView.el);
     });
   }
@@ -79,7 +74,6 @@ App.HomeView = Backbone.View.extend({
 
 
   render: function() {
-    console.log('render');
     this.$el.html(this.template({settings: window.App.settings}));
   }
 });
@@ -97,7 +91,6 @@ App.SectionView = Backbone.View.extend({
 
   onHoverImageSubmit: function(event) {
     event.preventDefault();
-    console.log('onHoverImageSubmit');
     var _this = this;
 
     var hoverImageFiles = this.$('.js-hover-image-file').get(0).files;
@@ -113,8 +106,6 @@ App.SectionView = Backbone.View.extend({
         contentType: false
       })
       .then(function(response) {
-        console.log('response ', response);
-        console.log(_this.$('.js-hover-image'));
         if(response.file) _this.$('.js-hover-image').attr('src', response.file);
       })
       .fail(function(response) {
@@ -177,15 +168,16 @@ App.SectionView = Backbone.View.extend({
   render: function() {
     var _this = this;
     this.$el.html(this.template(this.model));
-    var el = this.$('#gallery').get(0);
-    var sortable = Sortable.create(el, {
-      onEnd: function () {
-        var order = sortable.toArray();
-        $.post(`/cms/api/section/${_this.model._id}/reorder-images`, {images: order});
-      }
-    });
 
-    console.log('render ', this.$el);
+    if(this.model.parent) {
+      var el = this.$('#gallery').get(0);
+      var sortable = Sortable.create(el, {
+        onEnd: function () {
+          var order = sortable.toArray();
+          $.post(`/cms/api/section/${_this.model._id}/reorder-images`, {images: order});
+        }
+      });
+    }
     return this;
   }
 

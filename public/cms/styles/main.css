@@ -126,6 +126,9 @@ audio {
   margin-bottom: 3rem;
 }
 
+.page__section {
+  margin-bottom: 64px;
+}
 
 .gallery {
   margin: 0;
