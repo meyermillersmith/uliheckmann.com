@@ -280,7 +280,7 @@ app.get(`/api/:id.xml`, function(req, res) {
   });
 });
 
-
+console.log('process.env.PORT ', process.env.PORT);
 var listener = app.listen(process.env.PORT || 3000, function () {
   console.log('Server Started');
 });
