@@ -275,6 +275,6 @@ app.get(`/api/:id.xml`, function(req, res) {
 });
 
 
-var listener = app.listen(process.env.PORT || 3000, function () {
+var listener = app.listen(process.env.PORT || 3000, '127.0.0.1', function () {
   console.log('Server Started');
 });
