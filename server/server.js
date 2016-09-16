@@ -22,6 +22,8 @@ app.use(fileUpload());
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var UPLOAD_PATH = process.env.UPLOAD_PATH || 'public/uploads';
 var MONGO_URL = process.env.MONGO_URL || 'localhost/uliheckmann';
+var CMS_USERNAME = process.env.CMS_USERNAME || 'uli';
+var CMS_PASSWORD = process.env.CMS_PASSWORD || 'heckmann';
 
 
 var hbs = exphbs.create({
@@ -59,7 +61,7 @@ app.get('/', function(req, res) {
 app.get('/cms', function(req, res) {
   if(NODE_ENV === 'production') {
     var credentials = auth(req)
-    if (!credentials || credentials.name !== 'uli' || credentials.pass !== 'heckmann') {
+    if (!credentials || credentials.name !== CMS_USERNAME || credentials.pass !== CMS_PASSWORD) {
       res.statusCode = 401
       res.setHeader('WWW-Authenticate', 'Basic realm="example"')
       res.end('Access denied')
