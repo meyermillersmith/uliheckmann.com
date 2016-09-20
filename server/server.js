@@ -51,7 +51,7 @@ const PortfolioImages = db.get('portfolio_images');
 
 
 
-app.get('/', function(req, res) {
+app.get(['/', '/index.html'], function(req, res) {
   Settings.findOne().then(function (settings) {
     res.render('index', settings);
   });
