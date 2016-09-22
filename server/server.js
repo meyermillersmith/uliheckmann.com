@@ -78,13 +78,17 @@ app.get('/cms', function(req, res) {
 });
 
 app.post('/cms/api/settings', function(req, res) {
-  var background_color = req.body.background_color;
 
-  if(background_color && !req.files) {
-    Settings.findOneAndUpdate({}, {$set: {background_color: background_color}}).then((updatedDoc) => {
-      res.send({status: 'success'});
-    });
-  } else if(background_color && req.files) {
+  var promises = [];
+  var data = {};
+
+  var background_color = req.body.background_color;
+  if(background_color) {
+    data.background_color = background_color;
+  }
+
+  if(req.files && req.files.background_music_file) {
+    var musicPromise = new Promise(function(resolve, reject) {
       var file = req.files.background_music_file;
       var fileExt = path.extname(file.name);
       var fileId = uuid.v4();
@@ -92,19 +96,43 @@ app.post('/cms/api/settings', function(req, res) {
       var finalFilePath = path.join(UPLOAD_PATH, fileName);
 
       file.mv(finalFilePath, function(err) {
-        if(err) return res.status(500).send({status: 'fail', error: err});
-        Settings.findOneAndUpdate({}, {$set: {
+        if(err) return reject({status: 'fail', error: err});
+        data = Object.assign(data, {
           background_music: `/uploads/${fileName}`,
           background_color: background_color
-        }})
-        .then((updatedDoc) => {
-          res.send({status: 'success', file: `/uploads/${fileName}`});
         });
+        resolve();
       });
-
-  } else {
-    res.status(403).send({status: 'fail', error: 'missing parameters'});
+    });
+    promises.push(musicPromise);
   }
+
+  if(req.files && req.files.hover_file) {
+    console.log('hover_file ', req.files.hover_file);
+    var hoverPromise = new Promise(function(resolve, reject) {
+      var file = req.files.hover_file;
+      var fileExt = path.extname(file.name);
+      var fileId = uuid.v4();
+      var fileName = `${fileId}${fileExt}`;
+      var finalFilePath = path.join(UPLOAD_PATH, fileName);
+
+      file.mv(finalFilePath, function(err) {
+        if(err) return reject({status: 'fail', error: err});
+        data = Object.assign(data, {
+          hover_image: `/uploads/${fileName}`
+        });
+        resolve();
+      });
+    });
+    promises.push(hoverPromise);
+  }
+
+  Promise.all(promises).then(() => {
+    Settings.findOneAndUpdate({}, {$set: data}).then((updatedDoc) => {
+      updatedDoc.status = 'success';
+      res.send(updatedDoc);
+    });
+  });
 });
 
 
@@ -134,6 +162,7 @@ app.post(`/cms/api/section/:id`, function(req, res) {
     var finalFilePath = path.join(UPLOAD_PATH, fileName);
 
     file.mv(finalFilePath, function(err) {
+      var dimensions = sizeOf(finalFilePath);
       if(err) return res.status(500).send({status: 'fail', error: err});
 
       Sections.findOneAndUpdate({_id: id}, {$set: {hover_image: `/uploads/${fileName}`}}).then((updatedDoc) => {
@@ -179,7 +208,8 @@ app.post(`/cms/api/section/:id/add-image`, function(req, res) {
              position: count
            })
            .then(function(image) {
-             res.send({status: 'success', file: `/uploads/${fileName}`, id: image._id});
+             image.status = 'success';
+             res.send(image);
            });
         }).catch(function (err) {
             console.error(err);
@@ -203,6 +233,22 @@ app.post(`/cms/api/section/:id/remove-image/:image_id`, function(req, res) {
   //   if(err) return res.status(500).send({status: 'fail', error: err});
   // });
 });
+
+app.post(`/cms/api/section/:id/update-image/:image_id`, function(req, res) {
+  var id = req.params.id;
+  var image_id = req.params.image_id;
+  console.log(req.body);
+  if(req.body && req.body.fill) req.body.fill = req.body.fill == 'true';
+  PortfolioImages.findOneAndUpdate({_id: image_id}, {$set: req.body})
+  .then(function() {
+    res.send({status: 'success'});
+  })
+  // .fail(function(err) {
+  //   if(err) return res.status(500).send({status: 'fail', error: err});
+  // });
+});
+
+
 
 app.post(`/cms/api/section/:id/reorder-images`, function(req, res) {
   var id = req.params.id;
@@ -233,7 +279,9 @@ app.get(`/api/navigation.xml`, function(req, res) {
       navigation[section.parent][section.title] = section;
     });
 
-    res.render('xmls/navigation.xml.handlebars', navigation);
+    Settings.findOne().then(function (settings) {
+      res.render('xmls/navigation.xml.handlebars', {navigation: navigation, settings: settings});
+    });
   });
 });
 

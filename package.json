@@ -13,7 +13,8 @@
     "image-size": "^0.5.0",
     "jimp": "^0.2.27",
     "monk": "^3.1.2",
-    "node-uuid": "^1.4.7"
+    "node-uuid": "^1.4.7",
+    "pug": "^2.0.0-beta6"
   },
   "devDependencies": {},
   "scripts": {

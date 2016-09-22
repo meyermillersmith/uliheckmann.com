@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>uliheckmann CMS</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="/cms/styles/normalize.css">
         <link rel="stylesheet" href="/cms/styles/main.css">
+        <link rel="stylesheet" href="http://bgrins.github.io/spectrum/spectrum.css">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -59,8 +60,8 @@
                 <a href="#/section/clients">Clients</a>
               </li>
             </ul>
-          </div>
-          <div class='main-container js-main-region'>
+          </div><!--
+       --><div class='main-container js-main-region'>
 
           </div>
         </div>
@@ -71,6 +72,20 @@
               <div class='page__header'>
                 <h1>Home</h1>
               </div>
+
+              <section class='page__section'>
+                <h2>Hover Image</h2>
+                <div>
+                  <label for='hover-image-file'>
+                    <img class='section-page__hover-image js-hover-image' src='{{settings.hover_image}}' />
+                  </label>
+                </div>
+                <div>
+                  <fieldset>
+                    <h3>Upload a new image</h3>
+                    <input type='file' name='hover_file' class='js-hover-image-file' id='hover-image-file'/>
+                  </fieldset>
+              </section>
 
               <section>
                 <fieldset>
@@ -102,8 +117,9 @@
               <section class='page__section'>
                 <h2>Hover Image</h2>
                 <div>
-                  <label for='hover-image-file'>
+                  <label class='section-page__hover-label' for='hover-image-file'>
                     <img class='section-page__hover-image js-hover-image' src='{{hover_image}}' />
+                    <img class='section-page__hover-loader js-hover-loader' style='display: none;' src='/images/cms/spinner.gif'/>
                   </label>
                 </div>
                 <div>
@@ -121,9 +137,50 @@
                 <h2>Gallery</h2>
 
                 <ul class='gallery' id='gallery'>
-                  {{#each images}}<li style='background-image: url("{{path}}")' data-id='{{_id}}' data-position={{position}}>
+                  {{#each images}}
+                  <li data-id='{{_id}}' data-position={{position}}>
+                    <div class='gallery__image-div' style='background-image: url("{{path}}")'>
+                    </div>
+
                     <i class='gallery__image-remove js-gallery-image-remove'></i>
-                  </li>{{/each}}
+                    <div class='gallery__background'>
+                      {{#if fill}}
+                        <input type='checkbox' class='js-gallery-image-background' id='gallery_background_{{@index}}' checked/>
+                      {{else}}
+                        <input type='checkbox' class='js-gallery-image-background' id='gallery_background_{{@index}}' />
+                      {{/if}}
+                      <label for='gallery_background_{{@index}}'></label>
+                    </div>
+                    <div class='gallery__align'>
+                      <span class='gallery__align-left'>
+                        {{#if_eq align 'left'}}
+                        <input type='radio' class='js-gallery-image-align' value='left' name='gallery_align_{{@index}}' id='gallery_align_left_{{@index}}' checked/>
+                        {{else}}
+                        <input type='radio' class='js-gallery-image-align' value='left' name='gallery_align_{{@index}}' id='gallery_align_left_{{@index}}' />
+                        {{/if_eq}}
+                        <label for='gallery_align_left_{{@index}}'>
+                          <svg version="1.1" id="Triangle_left" x="0px"
+                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                          <path d="M14,5v10l-9-5L14,5z"/>
+                          </svg>
+                        </label>
+                      </span>
+                      <span class='gallery__align-right'>
+                        {{#if_eq align 'right'}}
+                          <input type='radio' class='js-gallery-image-align' value='right'name='gallery_align_{{@index}}' id='gallery_align_right_{{@index}}' checked/>
+                        {{else}}
+                          <input type='radio' class='js-gallery-image-align' value='right'name='gallery_align_{{@index}}' id='gallery_align_right_{{@index}}'/>
+                        {{/if_eq}}
+                        <label for='gallery_align_right_{{@index}}'>
+                          <svg version="1.1" id="Triangle_right" x="0px"
+                             y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                          <path d="M15,10l-9,5V5L15,10z"/>
+                          </svg>
+                        </label>
+                      </span>
+                    </div>
+                  </li>
+                  {{/each}}
                 </ul>
                 <div class='js-gallery-no-image-item gallery__empty-item'>
                   <input type='file' class='js-gallery-new-image gallery__image-input' id='gallery-new-image'/>
@@ -135,16 +192,64 @@
               {{/if}}
             </section>
           </template>
+
+          <template class='js-gallery-image-template'>
+            <li data-id='{{_id}}' data-position={{position}}>
+              <div class='gallery__image-div' style='background-image: url("{{path}}")'>
+              </div>
+
+              <i class='gallery__image-remove js-gallery-image-remove'></i>
+              <div class='gallery__background'>
+                {{#if fill}}
+                  <input type='checkbox' class='js-gallery-image-background' id='gallery_background_{{@index}}' checked/>
+                {{else}}
+                  <input type='checkbox' class='js-gallery-image-background' id='gallery_background_{{@index}}' />
+                {{/if}}
+                <label for='gallery_background_{{@index}}'></label>
+              </div>
+              <div class='gallery__align'>
+                <span class='gallery__align-left'>
+                  {{#if_eq align 'left'}}
+                  <input type='radio' class='js-gallery-image-align' value='left' name='gallery_align_{{@index}}' id='gallery_align_left_{{@index}}' checked/>
+                  {{else}}
+                  <input type='radio' class='js-gallery-image-align' value='left' name='gallery_align_{{@index}}' id='gallery_align_left_{{@index}}' />
+                  {{/if_eq}}
+                  <label for='gallery_align_left_{{@index}}'>
+                    <svg version="1.1" id="Triangle_left" x="0px"
+                       y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                    <path d="M14,5v10l-9-5L14,5z"/>
+                    </svg>
+                  </label>
+                </span>
+                <span class='gallery__align-right'>
+                  {{#if_eq align 'right'}}
+                    <input type='radio' class='js-gallery-image-align' value='right'name='gallery_align_{{@index}}' id='gallery_align_right_{{@index}}' checked/>
+                  {{else}}
+                    <input type='radio' class='js-gallery-image-align' value='right'name='gallery_align_{{@index}}' id='gallery_align_right_{{@index}}'/>
+                  {{/if_eq}}
+                  <label for='gallery_align_right_{{@index}}'>
+                    <svg version="1.1" id="Triangle_right" x="0px"
+                       y="0px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
+                    <path d="M15,10l-9,5V5L15,10z"/>
+                    </svg>
+                  </label>
+                </span>
+              </div>
+            </li>
+          </template>
           {{{{/raw}}}}
 
 
         <script>
+
           window.App = {};
           window.App.settings = {{{json_stringify settings}}};
         </script>
 
         <script src="/jquery/dist/jquery.js"></script>
         <script src="/handlebars/handlebars.js"></script>
+        <script src="/handlebars/handlebars.js"></script>
+        <script src="http://bgrins.github.io/spectrum/spectrum.js"></script>
         <script src="/Sortable/Sortable.min.js"></script>
         <script src="/cms/scripts/vendor/underscore.js"></script>
         <script src="/cms/scripts/vendor/backbone.js"></script>

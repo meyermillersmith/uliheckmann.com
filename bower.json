@@ -17,6 +17,7 @@
   "dependencies": {
     "handlebars": "^4.0.5",
     "jquery": "^3.1.0",
-    "Sortable": "sortable.js#^1.4.2"
+    "Sortable": "sortable.js#^1.4.2",
+    "colorpicker": "^1.2.4"
   }
 }

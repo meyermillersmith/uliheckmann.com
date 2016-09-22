@@ -7,7 +7,11 @@ const Sections = db.get('sections');
 
 var promises = []
 
-var settingsPromise = Settings.update({}, {$setOnInsert: {background_color: '#004344', background_music: '../../media/soundtrack32.mp3'}}, {upsert: true});
+var settingsPromise = Settings.update({}, {$setOnInsert: {
+  background_color: '#004344',
+  background_music: '../../media/soundtrack32.mp3',
+  hover_image: '../../media/menu_fill_main_16.jpg'
+}}, {upsert: true});
 promises.push(settingsPromise);
 
 var sectionPromises = [{

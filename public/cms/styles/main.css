@@ -1,3 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 body {
   font-family: 'Helvetica Neue', 'Helvetica', san-serif;
   font-size: 14px;
@@ -92,25 +102,34 @@ audio {
 
 
 .application {
-  display: flex;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
 .main-container {
-  flex: 1 0;
-  height: 100vh;
+  width: calc(100% - 200px);
+  height: 100%;
   overflow: auto;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .sidebar {
   padding: 2rem 3rem;
   border-right: 1px solid #d2d2d2;
   background: #f9f9f9;
-  height: 100vh;
+  width: 200px;
   overflow: auto;
+  display: inline-block;
+  vertical-align: top;
+  height: 100%;
 }
 
+
+.section-page__hover-label {
+  display: inline-block;
+  position: relative;
+}
 
 .section-page__hover-image {
   max-width: 400px;
@@ -118,8 +137,18 @@ audio {
   margin-bottom: 1rem;
 }
 
+.section-page__hover-loader {
+  width: 120px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -60px;
+  margin-left: -60px;
+}
+
 .page {
-  padding: 2rem 4rem 8rem 4rem;
+  padding: 2rem 4rem 15rem 4rem;
+  margin-bottom: 10rem;
 }
 
 .page__header {
@@ -133,20 +162,34 @@ audio {
 .gallery {
   margin: 0;
   padding: 0;
-  display: inline-block;
 }
 
 .gallery li {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+  margin-right: .5rem;
+  float: left;
+}
+
+.gallery li.loader {
+  width: 100px;
+  height: 100px;
+}
+
+.gallery li.loader img {
+  width: 100%;
+}
+
+.gallery__image-div {
   width: 100px;
   height: 100px;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  display: inline-block;
   position: relative;
   line-height: 100px;
-  margin-right: .5rem;
-
+  cursor: move;
 }
 
 
@@ -158,6 +201,7 @@ audio {
   height: 100px;
   transition: .2s transform;
   vertical-align: top;
+  float: left;
 }
 
 .gallery__empty-item:hover {
@@ -176,12 +220,13 @@ audio {
   position: absolute;
   width: 15px;
   height: 15px;
-  background-color: red;
+  background-color: white;
   border-radius: 100%;
   top: 5px;
   right: 5px;
   cursor: pointer;
   transition: .4s transform;
+  background-image: url('/images/cms/close.svg')
 }
 
 .gallery__image-remove:hover {
@@ -193,4 +238,64 @@ audio {
   top: -9999px;
   visibility: hidden;
   opacity: 0;
+}
+
+.gallery__align {
+  width: 100%;
+}
+
+.gallery__align-left {
+  position: absolute;
+  left: 5px;
+}
+
+.gallery__align-right {
+  position: absolute;
+  right: 5px;
+}
+
+.gallery__align svg {
+  width: 30px;
+  opacity: .3;
+}
+
+.gallery__align input:checked ~ label svg {
+  opacity: 1;
+}
+
+.gallery__align label {
+  margin: 0;
+  padding: 0;
+}
+
+.gallery__align input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.gallery__background {
+  position: absolute;
+  font-size: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -21px;
+}
+
+.gallery__background input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.gallery__background label {
+  margin: 0;
+}
+
+.gallery__background label:after {
+  content: 'black';
+  display: inline-block;
+  position: relative;
+}
+
+.gallery__background input:checked ~ label:after {
+  content: 'auto';
 }

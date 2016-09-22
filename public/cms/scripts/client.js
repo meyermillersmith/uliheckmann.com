@@ -28,6 +28,15 @@ App.Router = Backbone.Router.extend({
   }
 });
 
+
+Handlebars.registerHelper('if_eq', function(a, b, options) {
+  if(a == b) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
 $(document).ready(function() {
   new App.Router();
   Backbone.history.start();
@@ -38,7 +47,7 @@ $(document).ready(function() {
 App.HomeView = Backbone.View.extend({
   events: {
     'click .js-home-submit-button': 'clickedSubmit',
-
+    'change .js-gallery-new-image': 'addImage',
   },
 
   template: Handlebars.compile($('.js-home-template').html()),
@@ -55,6 +64,12 @@ App.HomeView = Backbone.View.extend({
       formData.append('background_music_file', musicFiles[0], musicFiles[0].name);
     }
 
+    var hoverImageFiles = this.$('.js-hover-image-file').get(0).files;
+    if(hoverImageFiles.length) {
+      formData.append('hover_file', hoverImageFiles[0], hoverImageFiles[0].name);
+    }
+
+
     $.ajax({
       url: '/cms/api/settings',
       type: "POST",
@@ -64,7 +79,9 @@ App.HomeView = Backbone.View.extend({
     })
     .then(function(response) {
       alert('Settings Updated');
-      if(response.file) _this.$('.js-background-music').attr('src', response.file);
+      if(response.background_music) _this.$('.js-background-music').attr('src', response.file);
+
+      if(response.hover_image) _this.$('.js-hover-image').attr('src', response.hover_image);
     })
     .fail(function(response) {
       alert(`Somthing went wrong with image upload. \n\n ${JSON.stringify(response, null, 2)}`);
@@ -75,6 +92,21 @@ App.HomeView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template({settings: window.App.settings}));
+    this.$(".js-bgcolor-input").spectrum({
+        color: window.App.settings.background_color,
+        allowEmpty:true,
+        showInput: true,
+        containerClassName: "full-spectrum",
+        showInitial: true,
+        showPalette: true,
+        showSelectionPalette: true,
+        showAlpha: true,
+        maxPaletteSize: 10,
+        preferredFormat: "hex",
+        localStorageKey: "spectrum.demo",
+        palette: []
+    });
+
   }
 });
 
@@ -84,7 +116,9 @@ App.SectionView = Backbone.View.extend({
     'submit .js-hover-image-form': 'onHoverImageSubmit',
     'click .js-section-status-toggle': 'onStatusToggle',
     'change .js-gallery-new-image': 'addImage',
-    'click .js-gallery-image-remove': 'clickedRemoveImage'
+    'click .js-gallery-image-remove': 'clickedRemoveImage',
+    'change .js-gallery-image-align': 'clickedImageAlign',
+    'change .js-gallery-image-background': 'clickedImageFill'
   },
 
   template: Handlebars.compile($('.js-section-template').html()),
@@ -95,22 +129,32 @@ App.SectionView = Backbone.View.extend({
 
     var hoverImageFiles = this.$('.js-hover-image-file').get(0).files;
     if(hoverImageFiles.length) {
-      var formData = new FormData();
-      formData.append('file', hoverImageFiles[0], hoverImageFiles[0].name);
 
-      $.ajax({
-        url: `/cms/api/section/${this.model._id}`,
-        type: "POST",
-        data: formData,
-        processData: false,
-        contentType: false
-      })
-      .then(function(response) {
-        if(response.file) _this.$('.js-hover-image').attr('src', response.file);
-      })
-      .fail(function(response) {
-        alert(`Somthing went wrong with image upload. \n\n ${JSON.stringify(response, null, 2)}`);
-      })
+      img = new Image();
+      img.onload = function () {
+        if(this.height > 1350) return alert('Image height too large, must be below 1350.')
+
+        _this.$('.js-hover-loader').show();
+
+        var formData = new FormData();
+        formData.append('file', hoverImageFiles[0], hoverImageFiles[0].name);
+
+        $.ajax({
+          url: `/cms/api/section/${_this.model._id}`,
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false
+        })
+        .then(function(response) {
+          _this.$('.js-hover-loader').hide();
+          if(response.file) _this.$('.js-hover-image').attr('src', response.file);
+        })
+        .fail(function(response) {
+          alert(`Somthing went wrong with image upload. \n\n ${JSON.stringify(response, null, 2)}`);
+        })
+      };
+      img.src = URL.createObjectURL(hoverImageFiles[0]);
     }
 
   },
@@ -129,6 +173,22 @@ App.SectionView = Backbone.View.extend({
     })
   },
 
+  clickedImageAlign: function(evernt) {
+    console.log(event.target.value);
+    var $target = $(event.target);
+    var value = $target.val();
+    var imageId = $(event.target).closest('[data-id]').data('id');
+    $.post(`/cms/api/section/${this.model._id}/update-image/${imageId}`, {align: value});
+  },
+
+  clickedImageFill: function(evernt) {
+    console.log(event.target.checked);
+    var $target = $(event.target);
+    var value = event.target.checked;
+    console.log(value);
+    var imageId = $(event.target).closest('[data-id]').data('id');
+    $.post(`/cms/api/section/${this.model._id}/update-image/${imageId}`, {fill: value});
+  },
 
 
   addImage: function() {
@@ -138,6 +198,9 @@ App.SectionView = Backbone.View.extend({
     if(files.length) {
       formData.append('file', files[0], files[0].name);
 
+      var $loader = $(`<li class='loader' data-id='-1' id='${Math.random()}'><img src='/images/cms/spinner.gif'/></li>`);
+      _this.$('.gallery').append($loader);
+
       $.ajax({
         url: `/cms/api/section/${this.model._id}/add-image`,
         type: "POST",
@@ -146,8 +209,8 @@ App.SectionView = Backbone.View.extend({
         contentType: false
       })
       .then(function(response) {
-        if(response.file) {
-          _this.$('.gallery').append(`<li data-id='${response.id}' style='background-image: url("${response.file}")'><i class='gallery__image-remove js-gallery-image-remove'></i></li>`)
+        if(response.path) {
+          $loader.replaceWith(Handlebars.compile($('.js-gallery-image-template').html())(response));
         }
       })
       .fail(function(response) {
@@ -170,10 +233,14 @@ App.SectionView = Backbone.View.extend({
     this.$el.html(this.template(this.model));
 
     if(this.model.parent) {
+      console.log('sortable');
       var el = this.$('#gallery').get(0);
       var sortable = Sortable.create(el, {
+        handle: ".gallery__image-div",
+         animation: 150,
         onEnd: function () {
-          var order = sortable.toArray();
+          var order = sortable.toArray().filter(function(index){return index !== '-1'});
+          console.log('order ', order);
           $.post(`/cms/api/section/${_this.model._id}/reorder-images`, {images: order});
         }
       });
