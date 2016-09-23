@@ -205,7 +205,9 @@ app.post(`/cms/api/section/:id/add-image`, function(req, res) {
              path: `/uploads/${fileName}`,
              path_thumb: `/uploads/${fileId}_thumb${fileExt}`,
              section_id: id,
-             position: count
+             position: count,
+             fill: false,
+             align: 'left'
            })
            .then(function(image) {
              image.status = 'success';
