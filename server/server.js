@@ -198,7 +198,7 @@ app.post(`/cms/api/section/:id/add-image`, function(req, res) {
         var dimensions = sizeOf(finalFilePath);
 
         Jimp.read(finalFilePath).then(function (image) {
-          image.resize(88, 100)
+          image.resize(Jimp.AUTO, 100)
            .write(path.join(UPLOAD_PATH, `${fileId}_thumb${fileExt}`));
 
            PortfolioImages.insert({
