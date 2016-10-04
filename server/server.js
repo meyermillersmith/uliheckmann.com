@@ -17,7 +17,7 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true, parameterLimit:50000}));
-app.use(fileUpload());
+app.use(fileUpload({limits: { fileSize: 50 * 1024 * 1024 }}));
 
 var NODE_ENV = process.env.NODE_ENV || 'development';
 var UPLOAD_PATH = process.env.UPLOAD_PATH || 'public/uploads';
