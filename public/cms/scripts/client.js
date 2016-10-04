@@ -69,6 +69,7 @@ App.HomeView = Backbone.View.extend({
       formData.append('hover_file', hoverImageFiles[0], hoverImageFiles[0].name);
     }
 
+    this.$('.js-home-submit-button').html('Saving Settings');
 
     $.ajax({
       url: '/cms/api/settings',
@@ -78,13 +79,14 @@ App.HomeView = Backbone.View.extend({
       contentType: false
     })
     .then(function(response) {
+      _this.$('.js-home-submit-button').html('Submit Settings');
       alert('Settings Updated');
       if(response.background_music) _this.$('.js-background-music').attr('src', response.file);
-
       if(response.hover_image) _this.$('.js-hover-image').attr('src', response.hover_image);
     })
     .fail(function(response) {
-      alert(`Somthing went wrong with image upload. \n\n ${JSON.stringify(response, null, 2)}`);
+      _this.$('.js-home-submit-button').html('Submit Settings');
+      alert(`Somthing went wrong. \n\n ${JSON.stringify(response, null, 2)}`);
     })
 
   },
