@@ -141,8 +141,21 @@
                   <li data-id='{{_id}}' data-position={{position}}>
                     <div class='gallery__image-div' style='background-image: url("{{path_thumb}}")'>
                     </div>
-
                     <i class='gallery__image-remove js-gallery-image-remove'></i>
+
+                    <div class='gallery__image-menu js-gallery-image-menu'>
+                      <input class='js-gallery-menu-checkbox' type='checkbox' name='{{../parent}}_{{../title}}_{{_id}}' id='{{../parent}}_{{../title}}_{{_id}}'/>
+                      <label for='{{../parent}}_{{../title}}_{{_id}}'>
+                        <ul class='gallery__image-menu-list'>
+                          {{#each ../sections}}
+                            {{#unless_eq _id ../../_id}}
+                            <li data-section-id='{{_id}}'>Move to {{parent}} {{title}}</li>
+                            {{/unless_eq}}
+                          {{/each}}
+                        </ul>
+                      </label>
+                    </div>
+
                     <div class='gallery__background'>
                       {{#if fill}}
                         <input type='checkbox' class='js-gallery-image-background' id='gallery_background_{{@index}}' checked/>
@@ -199,6 +212,20 @@
               </div>
 
               <i class='gallery__image-remove js-gallery-image-remove'></i>
+
+              <div class='gallery__image-menu js-gallery-image-menu'>
+                <input type='checkbox' name='{{section.parent}}_{{section.title}}_{{_id}}' id='{{section.parent}}_{{section.title}}_{{_id}}'/>
+                <label for='{{section.parent}}_{{section.title}}_{{_id}}'>
+                  <ul class='gallery__image-menu-list'>
+                    {{#each sections}}
+                      {{#unless_eq _id ../section_id}}
+                      <li data-section-id='{{_id}}'>Move to {{parent}} {{title}}</li>
+                      {{/unless_eq}}
+                    {{/each}}
+                  </ul>
+                </label>
+              </div>
+
               <div class='gallery__background'>
                 {{#if fill}}
                   <input type='checkbox' class='js-gallery-image-background' id='gallery_background_{{@index}}' checked/>

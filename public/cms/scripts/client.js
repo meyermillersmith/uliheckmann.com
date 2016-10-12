@@ -37,9 +37,24 @@ Handlebars.registerHelper('if_eq', function(a, b, options) {
   }
 });
 
+Handlebars.registerHelper('unless_eq', function(a, b, options) {
+  if(a !== b) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
+
 $(document).ready(function() {
   new App.Router();
   Backbone.history.start();
+
+  $(document).click(function(event) {
+    var $target = $(event.target).closest('.js-gallery-image-menu').find('.js-gallery-menu-checkbox');
+    $('.js-gallery-menu-checkbox')
+    .not($target)
+    .prop('checked', false);
+  });
 });
 
 
@@ -120,7 +135,8 @@ App.SectionView = Backbone.View.extend({
     'change .js-gallery-new-image': 'addImage',
     'click .js-gallery-image-remove': 'clickedRemoveImage',
     'change .js-gallery-image-align': 'clickedImageAlign',
-    'change .js-gallery-image-background': 'clickedImageFill'
+    'change .js-gallery-image-background': 'clickedImageFill',
+    'click .gallery__image-menu-list li': 'clickedMoveImage'
   },
 
   template: Handlebars.compile($('.js-section-template').html()),
@@ -212,7 +228,7 @@ App.SectionView = Backbone.View.extend({
       })
       .then(function(response) {
         if(response.path) {
-          $loader.replaceWith(Handlebars.compile($('.js-gallery-image-template').html())(response));
+          $loader.replaceWith(Handlebars.compile($('.js-gallery-image-template').html())(_.extend(response, {section: _this.model, sections: App.settings.sections})));
         }
       })
       .fail(function(response) {
@@ -230,19 +246,28 @@ App.SectionView = Backbone.View.extend({
     $.post(`/cms/api/section/${this.model._id}/remove-image/${image_id}`);
   },
 
+  clickedMoveImage: function(event) {
+    var $target = $(event.target).closest('li');
+    var $image = $target.closest('[data-id]');
+    var image_id = $target.closest('[data-id]').data('id');
+
+    $.post(`/cms/api/section/${this.model._id}/move-image/${image_id}`, {section_id: $target.data('section-id')})
+    .then(function(response) {
+      $image.remove();
+    });
+  },
+
   render: function() {
     var _this = this;
-    this.$el.html(this.template(this.model));
+    this.$el.html(this.template(_.extend(this.model, {sections: App.settings.sections})));
 
     if(this.model.parent) {
-      console.log('sortable');
       var el = this.$('#gallery').get(0);
       var sortable = Sortable.create(el, {
         handle: ".gallery__image-div",
          animation: 150,
         onEnd: function () {
           var order = sortable.toArray().filter(function(index){return index !== '-1'});
-          console.log('order ', order);
           $.post(`/cms/api/section/${_this.model._id}/reorder-images`, {images: order});
         }
       });

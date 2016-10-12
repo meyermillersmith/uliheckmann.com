@@ -67,12 +67,18 @@ app.get('/cms', function(req, res) {
       res.end('Access denied')
     } else {
       Settings.findOne().then(function(settings) {
-        res.render('cms', {settings: settings});
+        Sections.find().then(function(sections) {
+          settings.sections = sections.filter(section => section.parent).sort((a, b) => a.parent === 'archive');
+          res.render('cms', {settings: settings});
+        });
       });
     }
   } else {
     Settings.findOne().then(function(settings) {
-      res.render('cms', {settings: settings});
+      Sections.find().then(function(sections) {
+        settings.sections = sections.filter(section => section.parent).sort((a, b) => a.parent === 'archive');
+        res.render('cms', {settings: settings});
+      });
     });
   }
 });
@@ -108,7 +114,6 @@ app.post('/cms/api/settings', function(req, res) {
   }
 
   if(req.files && req.files.hover_file) {
-    console.log('hover_file ', req.files.hover_file);
     var hoverPromise = new Promise(function(resolve, reject) {
       var file = req.files.hover_file;
       var fileExt = path.extname(file.name);
@@ -236,10 +241,27 @@ app.post(`/cms/api/section/:id/remove-image/:image_id`, function(req, res) {
   // });
 });
 
+
+app.post(`/cms/api/section/:id/move-image/:image_id`, function(req, res) {
+  var id = req.params.id;
+  var image_id = req.params.image_id;
+
+  PortfolioImages.count({section_id: req.body.section_id}).then(function(count) {
+    PortfolioImages.update({_id: image_id}, {$set: {section_id: req.body.section_id, position: count+1}})
+    .then(function() {
+      res.send({status: 'success'});
+    })
+    .fail(function(err) {
+      if(err) return res.status(500).send({status: 'fail', error: err});
+    });
+  });
+});
+
+
 app.post(`/cms/api/section/:id/update-image/:image_id`, function(req, res) {
   var id = req.params.id;
   var image_id = req.params.image_id;
-  console.log(req.body);
+
   if(req.body && req.body.fill) req.body.fill = req.body.fill == 'true';
   PortfolioImages.findOneAndUpdate({_id: image_id}, {$set: req.body})
   .then(function() {
